@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Photo Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+    <header>
+        <h1>📸 Album Photo Pro</h1>
+        <button id="themeToggle">🌙</button>
+    </header>
+
+    <section class="panel">
+        <div class="album-management">
+            <input id="albumName" type="text" placeholder="Nume album nou...">
+            <button onclick="createAlbum()">Crează Album</button>
+
+            <select id="albumSelect" onchange="changeAlbum()"></select>
+        </div>
+
+        <div class="options-group">
+            <button onclick="downloadAlbum()">⬇ ZIP</button>
+            <button onclick="startSlideshow()">▶ Slideshow</button>
+
+            <select id="sortSelect" onchange="sortImages()">
+                <option value="none">Sortare</option>
+                <option value="name">Nume</option>
+                <option value="date">Dată</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="upload-panel">
+        <input type="file" id="fileInput" accept="image/*"  multiple>
+        <button id="addBtn">Adaugă fotografii</button>
+    </section>
+
+    <div id="dropZone" class="drop-zone">⤓ Trage imaginile aici</div>
+
+    <h2 id="albumTitle"></h2>
+
+    <div id="album" class="album-grid"></div>
+</div>
+
+<!-- ZIP libs -->
+<script src="lib/jszip.min.js"></script>
+<script src="lib/FileSaver.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
+    
